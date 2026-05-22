@@ -827,121 +827,51 @@ body.dark #mobile-nav{background:#0f172a;}
   <div class="container">
     <div class="section-label">Open Source Activity</div>
     <h2 class="section-title reveal">GitHub Stats</h2>
-    <div style="display:grid;gap:1.25rem;margin-top:2.5rem;">
+    <div style="display:flex;flex-direction:column;gap:1.25rem;margin-top:2.5rem;align-items:flex-start;">
 
-      <!-- GitHub Live Stats via GitHub API -->
-      <div id="gh-stats-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;max-width:500px;" class="reveal">
-        <div class="github-card" style="text-align:center;padding:1.75rem 1rem;">
-          <div id="gh-repos" style="font-size:2rem;font-weight:800;color:var(--accent);letter-spacing:-1px;">—</div>
-          <div style="font-size:0.75rem;font-weight:700;color:var(--text3);margin-top:4px;letter-spacing:0.5px;">PUBLIC REPOS</div>
-        </div>
-        <div class="github-card" style="text-align:center;padding:1.75rem 1rem;">
-          <div id="gh-commits" style="font-size:2rem;font-weight:800;color:var(--teal);letter-spacing:-1px;">—</div>
-          <div style="font-size:0.75rem;font-weight:700;color:var(--text3);margin-top:4px;letter-spacing:0.5px;">CONTRIBUTIONS</div>
-        </div>
+      <!-- Stats + Streak row -->
+      <div class="reveal" style="display:flex;flex-wrap:wrap;gap:1.25rem;">
+        <img
+          src="https://github-readme-stats.vercel.app/api?username=BhumikaBC07&show_icons=true&theme=tokyonight&hide_border=true&bg_color=1e293b&title_color=60a5fa&text_color=94a3b8&icon_color=60a5fa"
+          alt="GitHub Stats"
+          style="border-radius:16px;height:auto;max-width:100%;"
+        />
+        <img
+          src="https://github-readme-streak-stats.herokuapp.com?user=BhumikaBC07&theme=tokyonight&hide_border=true&background=1e293b&ring=60a5fa&fire=60a5fa&currStreakLabel=60a5fa"
+          alt="GitHub Streak"
+          style="border-radius:16px;height:auto;max-width:100%;"
+        />
       </div>
 
-      <!-- Top Languages breakdown (live from API) -->
-      <div class="github-card reveal" id="gh-langs-card">
-        <div style="font-size:0.82rem;font-weight:800;color:var(--navy);margin-bottom:1rem;display:flex;align-items:center;gap:8px;">
-          <span style="font-size:1rem;">💻</span> Top Languages
-        </div>
-        <div id="gh-langs-bars" style="display:flex;flex-direction:column;gap:0.75rem;">
-          <div style="font-size:0.8rem;color:var(--text3);">Loading…</div>
-        </div>
+      <!-- Top Languages -->
+      <div class="reveal">
+        <img
+          src="https://github-readme-stats.vercel.app/api/top-langs/?username=BhumikaBC07&layout=compact&theme=tokyonight&hide_border=true&bg_color=1e293b&title_color=60a5fa&text_color=94a3b8"
+          alt="Top Languages"
+          style="border-radius:16px;height:auto;max-width:100%;"
+        />
       </div>
 
-      <script>
-      (function() {
-        const username = 'BhumikaBC07';
-        const langColors = {
-          TypeScript: 'linear-gradient(90deg,#3178c6,#60a5fa)',
-          JavaScript: 'linear-gradient(90deg,#f7df1e,#fbbf24)',
-          Java: 'linear-gradient(90deg,#ed8b00,#f97316)',
-          HTML: 'linear-gradient(90deg,#e34c26,#f97316)',
-          CSS: 'linear-gradient(90deg,#1572b6,#38bdf8)',
-          Python: 'linear-gradient(90deg,#3776ab,#60a5fa)',
-          Shell: 'linear-gradient(90deg,#89e051,#4ade80)',
-          default: 'linear-gradient(90deg,#6e57f7,#a78bfa)'
-        };
-
-        fetch('https://api.github.com/users/' + username)
-          .then(r => r.json())
-          .then(data => {
-            document.getElementById('gh-repos').textContent = data.public_repos ?? '—';
-          }).catch(() => {});
-
-        fetch('https://api.github.com/users/' + username + '/repos?per_page=100')
-          .then(r => r.json())
-          .then(repos => {
-            if (!Array.isArray(repos)) return;
-
-            // Contributions = sum of all commits across repos (public)
-            let totalCommits = 0;
-            const commitFetches = repos.slice(0, 15).map(r =>
-              fetch('https://api.github.com/repos/' + username + '/' + r.name + '/commits?author=' + username + '&per_page=1')
-                .then(res => {
-                  const link = res.headers.get('Link');
-                  if (link) {
-                    const m = link.match(/page=(\d+)>; rel="last"/);
-                    if (m) totalCommits += parseInt(m[1]);
-                    else totalCommits += 1;
-                  } else {
-                    return res.json().then(d => { totalCommits += Array.isArray(d) ? d.length : 0; });
-                  }
-                }).catch(() => {})
-            );
-            Promise.all(commitFetches).then(() => {
-              document.getElementById('gh-commits').textContent = totalCommits + '+';
-            });
-
-            // Languages
-            const langMap = {};
-            const langFetches = repos.filter(r => r.language).slice(0, 20).map(r =>
-              fetch(r.languages_url)
-                .then(res => res.json())
-                .then(langs => {
-                  Object.entries(langs).forEach(([lang, bytes]) => {
-                    langMap[lang] = (langMap[lang] || 0) + bytes;
-                  });
-                }).catch(() => {})
-            );
-            Promise.all(langFetches).then(() => {
-              const total = Object.values(langMap).reduce((a, b) => a + b, 0);
-              if (!total) return;
-              const sorted = Object.entries(langMap).sort((a, b) => b[1] - a[1]).slice(0, 5);
-              document.getElementById('gh-langs-bars').innerHTML = sorted.map(([lang, bytes]) => {
-                const pct = Math.round((bytes / total) * 100);
-                const grad = langColors[lang] || langColors.default;
-                return '<div><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="font-family:\'JetBrains Mono\',monospace;font-size:0.75rem;font-weight:600;color:var(--text2);">' + lang + '</span><span style="font-family:\'JetBrains Mono\',monospace;font-size:0.72rem;color:var(--text3);">' + pct + '%</span></div><div style="height:7px;background:var(--off);border-radius:4px;overflow:hidden;"><div style="height:100%;width:' + pct + '%;background:' + grad + ';border-radius:4px;transition:width 1s ease;"></div></div></div>';
-              }).join('');
-            });
-          }).catch(() => {});
-      })();
-      </script>
-
-      <!-- Repos grid -->
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;" class="reveal">
-        <a href="https://github.com/BhumikaBC07/Full-Stack-ECommerce-Application" target="_blank" class="github-card" style="display:block;text-decoration:none;transition:all 0.3s;border-color:var(--border);" onmouseover="this.style.borderColor='var(--accent)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)'">
+      <!-- Repo cards -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;width:100%;" class="reveal">
+        <a href="https://github.com/BhumikaBC07/Full-Stack-ECommerce-Application" target="_blank" class="github-card" style="display:block;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.borderColor='var(--accent)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)'">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:0.6rem;">
-            <svg viewBox="0 0 16 16" fill="var(--accent)" style="width:16px;height:16px;"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 010-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+            <svg viewBox="0 0 16 16" fill="var(--accent)" style="width:16px;height:16px;flex-shrink:0;"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 010-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
             <span style="font-size:0.82rem;font-weight:700;color:var(--accent);">Full-Stack-ECommerce</span>
           </div>
           <div style="font-size:0.78rem;color:var(--text2);line-height:1.5;margin-bottom:0.75rem;">Production e-commerce platform · Spring Boot · React 19 · JWT · Razorpay · Docker</div>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <span style="display:flex;align-items:center;gap:4px;font-size:0.72rem;color:var(--text3);"><span style="width:10px;height:10px;border-radius:50%;background:#f7df1e;display:inline-block;"></span>JavaScript</span>
-          </div>
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.72rem;color:var(--text3);"><span style="width:10px;height:10px;border-radius:50%;background:#f7df1e;display:inline-block;"></span>JavaScript</span>
         </a>
-        <a href="https://github.com/BhumikaBC07/portfolio-marketplace" target="_blank" class="github-card" style="display:block;text-decoration:none;transition:all 0.3s;border-color:var(--border);" onmouseover="this.style.borderColor='var(--accent)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)'">
+        <a href="https://github.com/BhumikaBC07/portfolio-marketplace" target="_blank" class="github-card" style="display:block;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.borderColor='var(--accent)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)'">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:0.6rem;">
-            <svg viewBox="0 0 16 16" fill="var(--accent)" style="width:16px;height:16px;"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 010-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+            <svg viewBox="0 0 16 16" fill="var(--accent)" style="width:16px;height:16px;flex-shrink:0;"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 010-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
             <span style="font-size:0.82rem;font-weight:700;color:var(--accent);">portfolio-marketplace</span>
           </div>
           <div style="font-size:0.78rem;color:var(--text2);line-height:1.5;margin-bottom:0.75rem;">Full-stack marketplace · Next.js 14 · Express · PostgreSQL · Stripe · Three.js</div>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <span style="display:flex;align-items:center;gap:4px;font-size:0.72rem;color:var(--text3);"><span style="width:10px;height:10px;border-radius:50%;background:#3178c6;display:inline-block;"></span>TypeScript</span>
-          </div>
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:0.72rem;color:var(--text3);"><span style="width:10px;height:10px;border-radius:50%;background:#3178c6;display:inline-block;"></span>TypeScript</span>
         </a>
+      </div>
+
     </div>
   </div>
 </section>
