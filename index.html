@@ -340,12 +340,12 @@ body.dark #mobile-nav{background:#0f172a;}
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#architecture">Architecture</a></li>
     <li><a href="#education">Education</a></li>
+    <li><a href="#publication">Publication</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-cta">
-    <a href="https://drive.google.com/file/d/1s0aaIWF_Jq0APlnwiCfQaeiHX0vX5gKm/view?usp=drive_link" target="_blank" class="btn-nav ghost">Resume ↗</a>
+    <a href="https://drive.google.com/file/d/1Zxka8C_r3gv421AIFGm85vwnqCrwl9mH/view?usp=drive_link" target="_blank" class="btn-nav ghost">Resume ↗</a>
     <a href="#contact" class="btn-nav solid">Hire Me</a>
   </div>
   <button id="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
@@ -357,10 +357,10 @@ body.dark #mobile-nav{background:#0f172a;}
   <a href="#skills" onclick="toggleMenu()">Skills</a>
   <a href="#experience" onclick="toggleMenu()">Experience</a>
   <a href="#projects" onclick="toggleMenu()">Projects</a>
-  <a href="#architecture" onclick="toggleMenu()">Architecture</a>
   <a href="#education" onclick="toggleMenu()">Education</a>
+  <a href="#publication" onclick="toggleMenu()">Publication</a>
   <a href="#contact" onclick="toggleMenu()">Contact</a>
-  <a href="https://drive.google.com/file/d/1s0aaIWF_Jq0APlnwiCfQaeiHX0vX5gKm/view?usp=drive_link" target="_blank">Download Resume ↗</a>
+  <a href="https://drive.google.com/file/d/1Zxka8C_r3gv421AIFGm85vwnqCrwl9mH/view?usp=drive_link" target="_blank">Download Resume ↗</a>
 </div>
 
 <!-- HERO -->
@@ -390,7 +390,7 @@ body.dark #mobile-nav{background:#0f172a;}
           <svg viewBox="0 0 20 20" fill="currentColor" style="width:16px;height:16px;"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg>
           View Projects
         </a>
-        <a href="https://drive.google.com/file/d/1s0aaIWF_Jq0APlnwiCfQaeiHX0vX5gKm/view?usp=drive_link" target="_blank" class="btn btn-secondary">
+        <a href="https://drive.google.com/file/d/1Zxka8C_r3gv421AIFGm85vwnqCrwl9mH/view?usp=drive_link" target="_blank" class="btn btn-secondary">
           <svg viewBox="0 0 20 20" fill="currentColor" style="width:16px;height:16px;"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
           Download Resume
         </a>
@@ -435,7 +435,7 @@ body.dark #mobile-nav{background:#0f172a;}
         <p>Engineered <strong>JWT-secured REST APIs</strong>, RBAC, Redux state pipelines, and Razorpay payment integration with HMAC SHA256 fraud prevention. Drove measurable quality improvements through structured QA tracking, schema optimization cutting API response times by ~20%, and process standardization that sharpened cross-functional delivery velocity.</p>
         <p>Every project ships with a <strong>live URL, Postman collections, and a production-ready Docker configuration</strong>.</p>
         <div style="margin-top:1.25rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <a href="https://drive.google.com/file/d/1s0aaIWF_Jq0APlnwiCfQaeiHX0vX5gKm/view?usp=drive_link" target="_blank" class="btn btn-primary" style="font-size:0.82rem;padding:10px 20px;">View Resume →</a>
+          <a href="https://drive.google.com/file/d/1Zxka8C_r3gv421AIFGm85vwnqCrwl9mH/view?usp=drive_link" target="_blank" class="btn btn-primary" style="font-size:0.82rem;padding:10px 20px;">View Resume →</a>
           <a href="tel:+916362622347" class="btn btn-secondary" style="font-size:0.82rem;padding:10px 20px;">📞 +91 6362622347</a>
         </div>
         <div class="about-stats">
@@ -562,8 +562,15 @@ body.dark #mobile-nav{background:#0f172a;}
             <div class="project-sub">Full-Stack E-Commerce Platform</div>
           </div>
         </div>
-        <p class="project-desc">Production-grade e-commerce platform with Spring Boot REST API, React frontend, MySQL — live on Railway and Vercel with CI/CD. Features JWT authentication with RBAC (Customer/Admin), Razorpay payment gateway with HMAC SHA256 fraud prevention (UPI, cards, wallets, COD), Redux Toolkit cart/session state, paginated product catalog with filtering and sorting, and Docker multi-stage build for minimal production image.</p>
-        <div class="project-tech">
+        <ul class="project-desc" style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.55rem;">
+          <li style="padding-left:1.1rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">→</span>Architected and deployed a production-grade e-commerce platform solo in 20 days — 25 REST API endpoints across 6 Spring Boot controllers with JWT auth, RBAC, and Razorpay payment integration verified end-to-end in test mode.</li>
+          <li style="padding-left:1.1rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">→</span>Engineered a stateless JWT system using JJWT 0.11.5 with BCrypt hashing and @Valid validation — 14 protected endpoints, 7 public, zero authentication bypasses across 38 commits.</li>
+          <li style="padding-left:1.1rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">→</span>Integrated Razorpay Java SDK with HMAC SHA256 server-side signature verification across UPI, cards, net banking, and COD — fraud-prevention validation confirmed to block tampered frontend responses.</li>
+          <li style="padding-left:1.1rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">→</span>Built a paginated product catalog API with ~1 kB page payload, configurable sort by price/rating/date, category filtering, keyword search, and injection-safe field allowlisting across a 5-table MySQL schema.</li>
+          <li style="padding-left:1.1rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">→</span>Developed a React 19 SPA with Redux Toolkit (3 slices: auth, cart, toast), 11 route-level pages, role-gated navigation, and localStorage persistence for JWT session and cart state surviving browser refresh.</li>
+          <li style="padding-left:1.1rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">→</span>Configured Docker multi-stage build (Maven 3.9 + eclipse-temurin:17) and automated CI/CD via Railway and Vercel — every push to main deploys both backend and frontend within 2 minutes.</li>
+        </ul>
+        <div class="project-tech" style="margin-top:1rem;">
           <span>Java 17</span><span>Spring Boot 3.2</span><span>React 19</span><span>Redux Toolkit</span><span>MySQL 8</span><span>JWT</span><span>Spring Security</span><span>Razorpay</span><span>Docker</span><span>Railway</span><span>Vercel</span><span>GitHub Actions</span>
         </div>
         <div class="project-links">
@@ -581,18 +588,25 @@ body.dark #mobile-nav{background:#0f172a;}
             README
           </a>
           <span class="proj-meta-badge">6 Pages · Full Stack</span>
-          <span class="proj-meta-badge">Stripe · OpenAI</span>
+          <span class="proj-meta-badge">Stripe · 3 Tiers</span>
         </div>
         <div class="project-header">
           <div class="project-emoji">🎨</div>
           <div>
             <div class="project-title">PortfolioHub</div>
-            <div class="project-sub">3D AI Portfolio Marketplace</div>
+            <div class="project-sub">Full-Stack Portfolio Marketplace</div>
           </div>
         </div>
-        <p class="project-desc">Full-stack marketplace for premium 3D portfolio templates. Features server-side proxy pattern on Next.js/Vercel routing all API calls to Railway-hosted Express backend — eliminating CORS and DNS failures in split-deployment. 3D animated hero with React Three Fiber, 6 fully responsive pages, Stripe checkout + webhook, OpenAI GPT-4o-mini AI bio generator, role-based access (Free/Pro), JWT auth, admin CRUD panel, SEO + OG tags.</p>
-        <div class="project-tech">
-          <span>Next.js 14</span><span>TypeScript</span><span>React Three Fiber</span><span>Three.js</span><span>Node.js</span><span>Express.js</span><span>PostgreSQL</span><span>Prisma ORM</span><span>JWT</span><span>Stripe</span><span>OpenAI API</span>
+        <ul class="project-desc" style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.55rem;">
+          <li style="padding-left:1.1rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">→</span>Delivered a production-deployed full-stack marketplace — end-to-end browse-to-purchase flow across 6 pages, 11 REST API routes, and 16 curated templates spanning 4 tech categories.</li>
+          <li style="padding-left:1.1rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">→</span>Resolved a production CORS and DNS failure in a split-deployment architecture by building a Next.js server-side proxy routing all client requests to a Railway-hosted Express backend — eliminating ERR_NAME_NOT_RESOLVED errors and removing the backend URL from the client bundle entirely.</li>
+          <li style="padding-left:1.1rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">→</span>Integrated Stripe Checkout with signed webhook verification across 3 subscription tiers (Free / Pro / Agency) — purchase records written to PostgreSQL only after server-side event confirmation to prevent client-side payment spoofing.</li>
+          <li style="padding-left:1.1rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">→</span>Secured 11 REST API endpoints with JWT-based auth and RBAC, enforcing USER and ADMIN permission boundaries via Express middleware across the full request lifecycle.</li>
+          <li style="padding-left:1.1rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">→</span>Architected a PostgreSQL schema with 4 models (User, Portfolio, Purchase, Review) using Prisma ORM — seeded with 16 portfolio records and demo accounts via a single reproducible script.</li>
+          <li style="padding-left:1.1rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent);font-weight:700;">→</span>Built a Next.js 14 App Router frontend with a WebGL 3D animated hero using React Three Fiber and Three.js, achieving a 74 Lighthouse performance score across 6 fully responsive pages with a custom Tailwind CSS design system.</li>
+        </ul>
+        <div class="project-tech" style="margin-top:1rem;">
+          <span>Next.js 14</span><span>TypeScript</span><span>React Three Fiber</span><span>Three.js</span><span>Node.js</span><span>Express.js</span><span>PostgreSQL</span><span>Prisma ORM</span><span>JWT</span><span>Stripe</span><span>Tailwind CSS</span><span>Vercel</span><span>Railway</span>
         </div>
         <div class="project-links">
           <a href="https://portfolio-marketplace-tan.vercel.app" target="_blank" class="proj-link live">🌐 Live Demo</a>
@@ -695,15 +709,41 @@ body.dark #mobile-nav{background:#0f172a;}
   <div class="container">
     <div class="section-label">Academic Background</div>
     <h2 class="section-title reveal">Education</h2>
-    <div class="edu-card reveal" style="margin-top:2.5rem;">
-      <div class="edu-icon">🎓</div>
-      <div>
-        <div class="edu-degree">Bachelor of Technology — Computer Science & Engineering</div>
-        <div class="edu-inst">Sharnbasva University, Gulbarga</div>
-        <div class="edu-meta">
-          <span class="edu-badge">Jan 2021 – Aug 2025</span>
-          <span class="edu-badge highlight">CGPA: 8.09 / 10</span>
-          <span class="edu-badge">B.Tech CSE</span>
+    <div style="display:flex;flex-direction:column;gap:1.25rem;margin-top:2.5rem;">
+      <div class="edu-card reveal">
+        <div class="edu-icon">🎓</div>
+        <div>
+          <div class="edu-degree">Bachelor of Technology — Computer Science & Engineering</div>
+          <div class="edu-inst">Sharnbasva University, Gulbarga</div>
+          <div class="edu-meta">
+            <span class="edu-badge">Jan 2021 – Aug 2025</span>
+            <span class="edu-badge highlight">CGPA: 8.09 / 10</span>
+            <span class="edu-badge">B.Tech CSE</span>
+          </div>
+        </div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-icon">🏫</div>
+        <div>
+          <div class="edu-degree">Pre-University Education (PUC)</div>
+          <div class="edu-inst">St. Joseph Girls PU College, Gulbarga, Karnataka – 585105</div>
+          <div class="edu-meta">
+            <span class="edu-badge">Jan 2019 – Jul 2021</span>
+            <span class="edu-badge highlight">78.83%</span>
+            <span class="edu-badge">Dept. of Pre-University Education</span>
+          </div>
+        </div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-icon">📚</div>
+        <div>
+          <div class="edu-degree">Secondary School Education (SSLC)</div>
+          <div class="edu-inst">Campbells English Medium High School, Ghatge Layout, Gulbarga, Karnataka – 585103</div>
+          <div class="edu-meta">
+            <span class="edu-badge">Passing Year: 2019</span>
+            <span class="edu-badge highlight">72.16%</span>
+            <span class="edu-badge">KSEEB</span>
+          </div>
         </div>
       </div>
     </div>
@@ -715,64 +755,168 @@ body.dark #mobile-nav{background:#0f172a;}
   <div class="container">
     <div class="section-label">Credentials</div>
     <h2 class="section-title reveal">Certifications</h2>
-    <div class="cert-card reveal" style="margin-top:2.5rem;">
-      <div class="cert-badge">🏆 2025 Certification</div>
-      <div class="cert-title">Full Stack Development Certification</div>
-      <div class="cert-issuer">KodNest Technologies Pvt. Ltd.</div>
-      <div class="cert-desc">Covers Java, Spring Boot, REST APIs, MySQL, and React.js with real-world project deliverables. Includes end-to-end deployment using Docker and CI/CD pipelines.</div>
-      <a href="https://drive.google.com/file/d/1lPsAMS4HMdGNyg_knaCR_CVRHC69dEIh/view?usp=drivesdk" target="_blank" class="btn btn-primary" style="display:inline-flex;font-size:0.82rem;padding:10px 20px;">View Certificate ↗</a>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.25rem;margin-top:2.5rem;">
+      <div class="cert-card reveal">
+        <div class="cert-badge">🏆 2025 Certification</div>
+        <div class="cert-title">Full Stack Development Certification</div>
+        <div class="cert-issuer">KodNest Technologies Pvt. Ltd.</div>
+        <div class="cert-desc">Covers Java, Spring Boot, REST APIs, MySQL, and React.js with real-world project deliverables. Includes end-to-end deployment using Docker and CI/CD pipelines.</div>
+        <a href="https://drive.google.com/file/d/1lPsAMS4HMdGNyg_knaCR_CVRHC69dEIh/view?usp=drivesdk" target="_blank" class="btn btn-primary" style="display:inline-flex;font-size:0.82rem;padding:10px 20px;">View Certificate ↗</a>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-badge">☁️ 2026 Certification</div>
+        <div class="cert-title">AWS Cloud Practitioner</div>
+        <div class="cert-issuer">Amazon Web Services (AWS)</div>
+        <div class="cert-desc">Foundational certification covering core AWS services, cloud concepts, security, architecture best practices, pricing, and support models.</div>
+        <a href="https://drive.google.com/file/d/1cBGl_OyfowtC64OZ31ULIDWwbZSzigIF/view?usp=drive_link" target="_blank" class="btn btn-primary" style="display:inline-flex;font-size:0.82rem;padding:10px 20px;">View Certificate ↗</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- GITHUB -->
+<!-- PUBLICATION -->
+<section id="publication" style="background:var(--off);">
+  <div class="container">
+    <div class="section-label">Research</div>
+    <h2 class="section-title reveal">Publication</h2>
+    <div style="margin-top:2.5rem;">
+      <div class="cert-card reveal" style="max-width:560px;">
+        <div class="cert-badge">📄 2025 Publication</div>
+        <div class="cert-title">Research Publication</div>
+        <div class="cert-issuer">Bhumika Chuchakoti · Sharnbasva University</div>
+        <div class="cert-desc">Academic research paper published as part of B.Tech Computer Science &amp; Engineering coursework at Sharnbasva University. View the full document for details on the research scope, methodology, and findings.</div>
+        <a href="https://drive.google.com/file/d/1MlC_x6Ji5IpxPwx2Gd80BNgo3r5ZpK27/view?usp=drive_link" target="_blank" class="btn btn-primary" style="display:inline-flex;font-size:0.82rem;padding:10px 20px;">View Publication ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="github">
   <div class="container">
     <div class="section-label">Open Source Activity</div>
     <h2 class="section-title reveal">GitHub Stats</h2>
-    <div style="display:grid;gap:1rem;margin-top:2.5rem;">
-      <div class="github-card reveal">
-        <img src="https://github-readme-activity-graph.vercel.app/graph?username=BhumikaBC07&theme=tokyo-night&hide_border=true" alt="Bhumika GitHub Activity Graph" loading="lazy"/>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-        <div class="github-card reveal">
-          <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=BhumikaBC07&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="Bhumika GitHub Stats" loading="lazy"/>
-        </div>
-        <div class="github-card reveal">
-          <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=BhumikaBC07&layout=compact&theme=tokyonight&hide_border=true" alt="Bhumika Top Languages" loading="lazy"/>
-        </div>
-      </div>
-      <div class="github-card reveal">
-        <a href="https://git.io/streak-stats" target="_blank">
-          <img src="https://streak-stats.demolab.com?user=BhumikaBC07&theme=tokyonight&hide_border=true" alt="Bhumika GitHub Streak" loading="lazy" style="width:100%;border-radius:8px;"/>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+    <div style="display:grid;gap:1.25rem;margin-top:2.5rem;">
 
-<!-- TESTIMONIAL -->
-<section id="testimonial">
-  <div class="container" style="text-align:center;">
-    <div class="section-label">Social Proof</div>
-    <h2 class="section-title reveal" style="text-align:center;">What My Mentor Says</h2>
-    <div class="testimonial-card reveal" style="margin-top:2.5rem;">
-      <div class="testimonial-quote">"</div>
-      <p class="testimonial-text">
-        Bhumika demonstrated exceptional ownership during her internship — she independently architected and shipped a <em>complete full-stack e-commerce platform</em> in 20 days, including JWT authentication, Razorpay integration, Docker containerization, and a fully deployed CI/CD pipeline. Her ability to deliver <em>production-ready code</em> with zero hand-holding is rare for an intern at this stage. She's the kind of engineer who reads the docs, debugs systematically, and ships.
-      </p>
-      <div class="testimonial-author">
-        <div class="testimonial-avatar">KN</div>
-        <div style="text-align:left;">
-          <div class="testimonial-name">Ayush</div>
-          <div class="testimonial-role">Senior Engineer / Tech Lead · KodNest Technologies Pvt. Ltd.</div>
-          <div class="placeholder-note">✏️ Mentor · KodNest Technologies</div>
+      <!-- GitHub Live Stats via GitHub API -->
+      <div id="gh-stats-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;" class="reveal">
+        <div class="github-card" style="text-align:center;padding:1.75rem 1rem;">
+          <div id="gh-repos" style="font-size:2rem;font-weight:800;color:var(--accent);letter-spacing:-1px;">—</div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--text3);margin-top:4px;letter-spacing:0.5px;">PUBLIC REPOS</div>
+        </div>
+        <div class="github-card" style="text-align:center;padding:1.75rem 1rem;">
+          <div id="gh-commits" style="font-size:2rem;font-weight:800;color:var(--teal);letter-spacing:-1px;">—</div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--text3);margin-top:4px;letter-spacing:0.5px;">CONTRIBUTIONS</div>
         </div>
       </div>
-      <a href="https://linkedin.com/in/bhumika-chuchakoti-9b317727a" target="_blank" class="btn btn-secondary" style="display:inline-flex;margin-top:1.5rem;font-size:0.8rem;padding:10px 18px;">
-        <svg viewBox="0 0 24 24" fill="currentColor" style="width:15px;height:15px;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        View LinkedIn Recommendations
-      </a>
+
+      <!-- Top Languages breakdown (live from API) -->
+      <div class="github-card reveal" id="gh-langs-card">
+        <div style="font-size:0.82rem;font-weight:800;color:var(--navy);margin-bottom:1rem;display:flex;align-items:center;gap:8px;">
+          <span style="font-size:1rem;">💻</span> Top Languages
+        </div>
+        <div id="gh-langs-bars" style="display:flex;flex-direction:column;gap:0.75rem;">
+          <div style="font-size:0.8rem;color:var(--text3);">Loading…</div>
+        </div>
+      </div>
+
+      <script>
+      (function() {
+        const username = 'BhumikaBC07';
+        const langColors = {
+          TypeScript: 'linear-gradient(90deg,#3178c6,#60a5fa)',
+          JavaScript: 'linear-gradient(90deg,#f7df1e,#fbbf24)',
+          Java: 'linear-gradient(90deg,#ed8b00,#f97316)',
+          HTML: 'linear-gradient(90deg,#e34c26,#f97316)',
+          CSS: 'linear-gradient(90deg,#1572b6,#38bdf8)',
+          Python: 'linear-gradient(90deg,#3776ab,#60a5fa)',
+          Shell: 'linear-gradient(90deg,#89e051,#4ade80)',
+          default: 'linear-gradient(90deg,#6e57f7,#a78bfa)'
+        };
+
+        fetch('https://api.github.com/users/' + username)
+          .then(r => r.json())
+          .then(data => {
+            document.getElementById('gh-repos').textContent = data.public_repos ?? '—';
+            document.getElementById('gh-followers').textContent = data.followers ?? '—';
+          }).catch(() => {});
+
+        fetch('https://api.github.com/users/' + username + '/repos?per_page=100')
+          .then(r => r.json())
+          .then(repos => {
+            if (!Array.isArray(repos)) return;
+            const stars = repos.reduce((s, r) => s + (r.stargazers_count || 0), 0);
+            document.getElementById('gh-stars').textContent = stars;
+
+            // Contributions = sum of all commits across repos (public)
+            let totalCommits = 0;
+            const commitFetches = repos.slice(0, 15).map(r =>
+              fetch('https://api.github.com/repos/' + username + '/' + r.name + '/commits?author=' + username + '&per_page=1')
+                .then(res => {
+                  const link = res.headers.get('Link');
+                  if (link) {
+                    const m = link.match(/page=(\d+)>; rel="last"/);
+                    if (m) totalCommits += parseInt(m[1]);
+                    else totalCommits += 1;
+                  } else {
+                    return res.json().then(d => { totalCommits += Array.isArray(d) ? d.length : 0; });
+                  }
+                }).catch(() => {})
+            );
+            Promise.all(commitFetches).then(() => {
+              document.getElementById('gh-commits').textContent = totalCommits + '+';
+            });
+
+            // Languages
+            const langMap = {};
+            const langFetches = repos.filter(r => r.language).slice(0, 20).map(r =>
+              fetch(r.languages_url)
+                .then(res => res.json())
+                .then(langs => {
+                  Object.entries(langs).forEach(([lang, bytes]) => {
+                    langMap[lang] = (langMap[lang] || 0) + bytes;
+                  });
+                }).catch(() => {})
+            );
+            Promise.all(langFetches).then(() => {
+              const total = Object.values(langMap).reduce((a, b) => a + b, 0);
+              if (!total) return;
+              const sorted = Object.entries(langMap).sort((a, b) => b[1] - a[1]).slice(0, 5);
+              document.getElementById('gh-langs-bars').innerHTML = sorted.map(([lang, bytes]) => {
+                const pct = Math.round((bytes / total) * 100);
+                const grad = langColors[lang] || langColors.default;
+                return '<div><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="font-family:\'JetBrains Mono\',monospace;font-size:0.75rem;font-weight:600;color:var(--text2);">' + lang + '</span><span style="font-family:\'JetBrains Mono\',monospace;font-size:0.72rem;color:var(--text3);">' + pct + '%</span></div><div style="height:7px;background:var(--off);border-radius:4px;overflow:hidden;"><div style="height:100%;width:' + pct + '%;background:' + grad + ';border-radius:4px;transition:width 1s ease;"></div></div></div>';
+              }).join('');
+            });
+          }).catch(() => {});
+      })();
+      </script>
+
+      <!-- Repos grid -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;" class="reveal">
+        <a href="https://github.com/BhumikaBC07/Full-Stack-ECommerce-Application" target="_blank" class="github-card" style="display:block;text-decoration:none;transition:all 0.3s;border-color:var(--border);" onmouseover="this.style.borderColor='var(--accent)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)'">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:0.6rem;">
+            <svg viewBox="0 0 16 16" fill="var(--accent)" style="width:16px;height:16px;"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 010-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+            <span style="font-size:0.82rem;font-weight:700;color:var(--accent);">Full-Stack-ECommerce</span>
+          </div>
+          <div style="font-size:0.78rem;color:var(--text2);line-height:1.5;margin-bottom:0.75rem;">Production e-commerce platform · Spring Boot · React 19 · JWT · Razorpay · Docker</div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <span style="display:flex;align-items:center;gap:4px;font-size:0.72rem;color:var(--text3);"><span style="width:10px;height:10px;border-radius:50%;background:#f7df1e;display:inline-block;"></span>JavaScript</span>
+            <span style="font-size:0.72rem;color:var(--text3);">⭐ 0</span>
+            <span style="font-size:0.72rem;color:var(--text3);">🍴 0</span>
+          </div>
+        </a>
+        <a href="https://github.com/BhumikaBC07/portfolio-marketplace" target="_blank" class="github-card" style="display:block;text-decoration:none;transition:all 0.3s;border-color:var(--border);" onmouseover="this.style.borderColor='var(--accent)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)'">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:0.6rem;">
+            <svg viewBox="0 0 16 16" fill="var(--accent)" style="width:16px;height:16px;"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 010-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+            <span style="font-size:0.82rem;font-weight:700;color:var(--accent);">portfolio-marketplace</span>
+          </div>
+          <div style="font-size:0.78rem;color:var(--text2);line-height:1.5;margin-bottom:0.75rem;">Full-stack marketplace · Next.js 14 · Express · PostgreSQL · Stripe · Three.js</div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <span style="display:flex;align-items:center;gap:4px;font-size:0.72rem;color:var(--text3);"><span style="width:10px;height:10px;border-radius:50%;background:#3178c6;display:inline-block;"></span>TypeScript</span>
+            <span style="font-size:0.72rem;color:var(--text3);">⭐ 0</span>
+            <span style="font-size:0.72rem;color:var(--text3);">🍴 0</span>
+          </div>
+        </a>
     </div>
   </div>
 </section>
