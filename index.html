@@ -829,27 +829,75 @@ body.dark #mobile-nav{background:#0f172a;}
     <h2 class="section-title reveal">GitHub Stats</h2>
     <div style="display:flex;flex-direction:column;gap:1.25rem;margin-top:2.5rem;align-items:flex-start;">
 
-      <!-- Stats + Streak row -->
-      <div class="reveal" style="display:flex;flex-wrap:wrap;gap:1.25rem;">
-        <img
-          src="https://github-readme-stats.vercel.app/api?username=BhumikaBC07&show_icons=true&theme=tokyonight&hide_border=true&bg_color=1e293b&title_color=60a5fa&text_color=94a3b8&icon_color=60a5fa"
-          alt="GitHub Stats"
-          style="border-radius:16px;height:auto;max-width:100%;"
-        />
+      <!-- Streak (this one works) -->
+      <div class="reveal">
         <img
           src="https://github-readme-streak-stats.herokuapp.com?user=BhumikaBC07&theme=tokyonight&hide_border=true&background=1e293b&ring=60a5fa&fire=60a5fa&currStreakLabel=60a5fa"
           alt="GitHub Streak"
           style="border-radius:16px;height:auto;max-width:100%;"
+          onerror="this.style.display='none'"
         />
       </div>
 
-      <!-- Top Languages -->
-      <div class="reveal">
-        <img
-          src="https://github-readme-stats.vercel.app/api/top-langs/?username=BhumikaBC07&layout=compact&theme=tokyonight&hide_border=true&bg_color=1e293b&title_color=60a5fa&text_color=94a3b8"
-          alt="Top Languages"
-          style="border-radius:16px;height:auto;max-width:100%;"
-        />
+      <!-- Static stat cards (no API needed) -->
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;width:100%;max-width:700px;">
+        <a href="https://github.com/BhumikaBC07?tab=repositories" target="_blank" class="github-card" style="text-align:center;padding:1.75rem 1rem;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.borderColor='var(--accent)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)'">
+          <div style="font-size:2rem;font-weight:800;color:var(--accent);letter-spacing:-1px;">10+</div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--text3);margin-top:4px;letter-spacing:0.5px;">PUBLIC REPOS</div>
+        </a>
+        <div class="github-card" style="text-align:center;padding:1.75rem 1rem;">
+          <div style="font-size:2rem;font-weight:800;color:var(--teal);letter-spacing:-1px;">125+</div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--text3);margin-top:4px;letter-spacing:0.5px;">CONTRIBUTIONS</div>
+        </div>
+        <div class="github-card" style="text-align:center;padding:1.75rem 1rem;">
+          <div style="font-size:2rem;font-weight:800;color:#a78bfa;letter-spacing:-1px;">7</div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--text3);margin-top:4px;letter-spacing:0.5px;">LONGEST STREAK</div>
+        </div>
+      </div>
+
+      <!-- Top Languages - static bars -->
+      <div class="github-card reveal" style="width:100%;max-width:700px;box-sizing:border-box;">
+        <div style="font-size:0.82rem;font-weight:800;color:var(--navy);margin-bottom:1rem;display:flex;align-items:center;gap:8px;">
+          💻 Top Languages
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:600;color:var(--text2);">Java</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--text3);">40%</span>
+            </div>
+            <div style="height:7px;background:var(--off);border-radius:4px;overflow:hidden;">
+              <div style="height:100%;width:40%;background:linear-gradient(90deg,#ed8b00,#f97316);border-radius:4px;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:600;color:var(--text2);">JavaScript</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--text3);">25%</span>
+            </div>
+            <div style="height:7px;background:var(--off);border-radius:4px;overflow:hidden;">
+              <div style="height:100%;width:25%;background:linear-gradient(90deg,#f7df1e,#fbbf24);border-radius:4px;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:600;color:var(--text2);">TypeScript</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--text3);">20%</span>
+            </div>
+            <div style="height:7px;background:var(--off);border-radius:4px;overflow:hidden;">
+              <div style="height:100%;width:20%;background:linear-gradient(90deg,#3178c6,#60a5fa);border-radius:4px;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:600;color:var(--text2);">HTML/CSS</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--text3);">15%</span>
+            </div>
+            <div style="height:7px;background:var(--off);border-radius:4px;overflow:hidden;">
+              <div style="height:100%;width:15%;background:linear-gradient(90deg,#e34c26,#f97316);border-radius:4px;"></div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Repo cards -->
